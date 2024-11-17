@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Add New Student</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-4">
+
+  <h3>Add New Student</h3>
+  <form th:action="@{/saveStudent}" method="post" class="form-group">
+    <div class="mb-3">
+      <label for="adminNo">Admin No</label>
+      <input type="text" id="adminNo" name="adminNo" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="otherName">Other Name</label>
+      <input type="text" id="otherName" name="otherName" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" class="form-control" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="grade">Grade</label>
+      <input type="text" id="grade" name="grade" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a th:href="@{/}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+</body>
+</html>
